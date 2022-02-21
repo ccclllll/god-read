@@ -1,0 +1,121 @@
+body,
+div,
+ul,
+li,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+textarea,
+select,
+p,
+dl,
+dt,
+dd,
+a,
+img,
+button,
+form,
+table,
+th,
+tr,
+td,
+tbody,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /* 取消链接高亮  */
+}
+
+html {
+    /*文本大小根据设备尺寸进行调整，取值auto自动、none不调整、percentage百分比*/
+    /*解决的是chrome等以webkit为内核的浏览器下不支持小于12px的问题，在chrome下，缩小网页，其他元素缩小，但是字体大小不变的问题。*/
+    -webkit-text-size-adjust: 100%;
+    /*用百分比来指定文本大小在设备尺寸不同的情况下如何调整*/
+    -ms-text-size-adjust: 100%;
+    /*快速滚动和回弹的效果，允许独立的滚动区域和触摸回弹，WebKit私有的属性*/
+    -webkit-overflow-scrolling: touch;
+        /*当用户轻按一个链接或者JavaScript可点击元素时给元素覆盖一个高亮色。如果想取消这个高亮，将值设置为全透明即可，比如transparent*/
+        -webkit-tap-highlight-color:transparent;
+    /* 拓展：(1)设置用户是否能够选中文本user-select
+	   取值：none:文本不能被选择；
+                text:可以选择文本;
+                all：当所有内容作为一个整体时可以被选择。如果双击或者在上下文上点击子元素，该子元素向上回溯的最高祖先元素;
+                element:可以选择文本，但选择范围受元素边界的约束*/
+    /* 解决IOS默认滑动很卡的情况 */
+    -webkit-overflow-scrolling: touch;
+}
+
+
+
+input,
+select,
+textarea {
+    font-size: 100%
+}
+
+img {
+    /* 图片自适应 */
+    width: 100%;
+    height: auto;
+    width: auto\9;
+    /* ie8 */
+    display: block;
+    -ms-interpolation-mode: bicubic;
+    /*为了照顾ie图片缩放失真*/
+}
+
+table {
+    /*表格设置合并边框*/
+    border-collapse: collapse;
+    /*单元格间隙合并*/
+    border-spacing: 0
+}
+
+/*sub标签可定义下标文本,sup标签可定义上标文本。*/
+/*提示：
+	无论是 <sub> 标签还是和它对应的 <sup> 标签，在数学等式、科学符号和化学公式中都非常有用。
+	<sup> 标签在向文档添加脚注以及表示方程式中的指数值时非常有用。
+	如果和 <a> 标签结合起来使用，就可以创建出很好的超链接脚注。*/
+sub,
+sup {
+    font-size: 75%;
+    /*字体75%继承父级*/
+    line-height: 0;
+    /*行高为0*/
+    position: relative;
+    /*绝对定位*/
+    vertical-align: baseline;
+    /*设置元素的垂直对齐方式。----默认值:baseline*/
+}
+
+a:active,
+a:hover,
+a:link,
+a:visited {
+    /*active:鼠标按下还未释放时的样子*/
+    /*hover：鼠标经过时的链接效果*/
+    /*link：未访问的链接*/
+    /*visited：已访问的链接*/
+    background: 0 0;
+    /*默认值*/
+    -webkit-tap-highlight-color: transparent;
+    /*这个属性只用于iOS (iPhone和iPad)。当你点击一个链接或者通过Javascript定义的可点击元素的时候，它就会出现一个半透明的灰色背景。
+          要重设这个表现，你可以设置-webkit-tap-highlight-color为任何颜色。想要禁用这个高亮，设置颜色的alpha值为0即可。*/
+    -webkit-tap-highlight-color: transparent;
+    outline: 0;
+
+}
