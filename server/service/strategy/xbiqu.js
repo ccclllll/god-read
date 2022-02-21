@@ -20,9 +20,9 @@ inherit(XibiquStrategy, Strategy)
  * @param {*} url 
  * @returns 
  */
-XibiquStrategy.prototype.parseChapterDetail = function ($) {
+XibiquStrategy.prototype.parseChapterDetail = function ($, title = '') {
 
-    let title = $('.bookname').children()[0].children[0].data
+    //let title = $('.bookname').children()[0].children[0].data
     //console.log(title)
     let content = $('#content')
     let contentStr = '    '
@@ -31,7 +31,7 @@ XibiquStrategy.prototype.parseChapterDetail = function ($) {
             contentStr = contentStr + child.data + '\r\n'
         }
     })
-    contentStr = '    ' + title + '\r\n\r\n\r\n' + contentStr + +title
+    contentStr = '    ' + title + '\r\n' + contentStr 
     contentStr = contentStr.replace(/NaN/g, '')
     return {
         title,

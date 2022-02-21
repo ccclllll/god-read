@@ -55,7 +55,7 @@ Strategy.prototype.getAllChapterDetail = function (chapters, callback) {
             callback(null)
         } else {
             const $ = res.$;
-            let detailRes = this.parseChapterDetail($, res.request.uri.href, chapters[queueIndex].name)
+            let detailRes = this.parseChapterDetail($, chapters[queueIndex].name)
             allContent = allContent + detailRes.content
             queueIndex = queueIndex + 1
             if (queueIndex < chapters.length) {
